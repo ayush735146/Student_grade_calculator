@@ -1,0 +1,40 @@
+def calculate_grade(marks):
+    # Handling invalid marks first
+    if marks < 0 or marks > 100:
+        return "Invalid Marks"
+    elif marks >= 90:
+        return "A+"
+    elif marks >= 80:
+        return "A"
+    elif marks >= 70:
+        return "B"
+    elif marks >= 60:
+        return "C"
+    elif marks >= 50:
+        return "D"
+    else:
+        return "F (Fail)"
+
+def main():
+    # Manually created dataset
+    student_marks = {
+        "Ravi": 95,
+        "Simran": 82,
+        "Aman": 68,
+        "Kriti": 55,
+        "Neha": 42,
+        "Kabir": 105,  # Invalid
+        "Aryan": -10   # Invalid
+    }
+
+    print("=== Student Grade Report ===")
+    print("-" * 35)
+
+    for student, marks in student_marks.items():
+        grade = calculate_grade(marks)
+        print(f"Student: {student:<8} | Marks: {marks:<4} | Grade: {grade}")
+
+    print("-" * 35)
+
+if __name__ == "__main__":
+    main()
